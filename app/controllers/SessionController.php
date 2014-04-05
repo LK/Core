@@ -11,7 +11,7 @@ class SessionController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('session.index')->nest('footer', 'child.footer');
+		return View::make('session.index')->nest('footer', 'child.footer')->nest('navigation', 'child.header');
 	}
 
 	/**
@@ -32,7 +32,7 @@ class SessionController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('session.create')->nest('footer', 'child.footer');
+		return View::make('session.create')->nest('footer', 'child.footer')->nest('navigation', 'child.header');
 	}
  
 	public function store()
@@ -72,16 +72,13 @@ class SessionController extends \BaseController {
 	}
 
 	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
+	 * Log the user out
 	 */
 	public function destroy()
 	{
 		Auth::logout();
 
-		return Redirect::url('/')
+		return Redirect::home();
 	}
 
 }
