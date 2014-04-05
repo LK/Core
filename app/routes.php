@@ -2,9 +2,9 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::resource('session', 'SessionController');
-Route::get('/login', 'SessionController@index');
+Route::get('/login', 'SessionController@create');
 Route::get('/logoff', 'SessionController@destroy');
+Route::resource('session', 'SessionController');
 
 Route::resource('register', 'RegisterController');
 

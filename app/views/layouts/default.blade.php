@@ -13,6 +13,7 @@
 
 		@yield('js')
 		
+		@if ($footer = '') @endif
 		{{ $footer }}
 	</body>
 </html>

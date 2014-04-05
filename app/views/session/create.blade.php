@@ -5,11 +5,11 @@
 @stop
 
 @section('content')
-{{ Form::open() }}
+{{ Form::open(['route' => 'session.store']) }}
 
 	<div>
-		{{ Form::label('username', 'Username: ') }}
-		{{ Form::text('username') }}
+		{{ Form::label('email', 'Email: ') }}
+		{{ Form::text('email') }}
 	</div>
 	<div>
 		{{ Form::label('password', 'Password: ') }}

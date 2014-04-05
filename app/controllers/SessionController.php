@@ -22,7 +22,7 @@ class SessionController extends \BaseController {
 	 */
 	public function show()
 	{
-		//
+
 	}
 
 	/**
@@ -32,17 +32,21 @@ class SessionController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('session.create')->nest('footer', 'child.footer');
 	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
+ 
 	public function store()
 	{
-		//
+		$input = Input::all();
+		
+		$attempt = Auth::attempt([
+			'email' => $input['email'],
+			'password' => $input['password']
+		]);
+
+		if ($attempt) return Redirect::intended('/');
+
+		dd('problem');
 	}
 
 	/**
