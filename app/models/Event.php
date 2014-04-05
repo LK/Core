@@ -29,4 +29,9 @@ class Event extends \Eloquent {
 	{
 		return $this->description;
 	}
+
+	public function getParticipants()
+	{
+		return $this->belongsToMany('User');
+	}
 }
