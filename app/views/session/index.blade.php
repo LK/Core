@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-	TeamHack | Register
+	TeamHack | Login
 @stop
 
 @section('content')
