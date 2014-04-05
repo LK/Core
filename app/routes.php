@@ -8,9 +8,9 @@ Route::resource('session', 'SessionController');
 
 Route::resource('register', 'RegisterController');
 
-Route::resource('profile', 'ProfileController', ['only'=>['show', 'store', 'edit', 'update', 'destroy']])->before('auth');
+Route::resource('profile', 'ProfileController', ['before' => 'auth', 'except' => ['index']]);
 
-Route::resource('event')
+Route::resource('event', 'EventController', ['before' => 'auth', 'except' => ['index']]);
 
 /*
 	Generic routes
