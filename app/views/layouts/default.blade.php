@@ -6,14 +6,13 @@
 		@yield('css')
 	</head>
 	<body>
-		@if ($navigation = '') @endif
+		@if ($navigation == '') @endif
 		{{ $navigation }}
 
 		@yield('content')
 
 		@yield('js')
 		
-		@if ($footer = '') @endif
 		{{ $footer }}
 	</body>
 </html>
