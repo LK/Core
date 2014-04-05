@@ -15,6 +15,17 @@ class SessionController extends \BaseController {
 	}
 
 	/**
+	 * Display register page
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show()
+	{
+		//
+	}
+
+	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
@@ -30,17 +41,6 @@ class SessionController extends \BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
 	{
 		//
 	}
