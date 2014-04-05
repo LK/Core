@@ -12,7 +12,7 @@ class AddDescriptionToEventTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('event', function(Blueprint $table) {
+		Schema::table('events', function(Blueprint $table) {
 			$table->text('description');
 		});
 	}
@@ -25,7 +25,7 @@ class AddDescriptionToEventTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('event', function(Blueprint $table) {
+		Schema::table('events', function(Blueprint $table) {
 			$table->dropColumn('description');
 		});
 	}
