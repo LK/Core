@@ -15,6 +15,9 @@
 		{{ Form::label('password', 'Password: ') }}
 		{{ Form::password('password') }}
 	</div>
+	<div>
+		{{ Form::submit('Login') }}
+	</div>
 
 {{ Form::close() }}
 @stop
