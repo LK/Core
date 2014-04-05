@@ -49,4 +49,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+	/**
+	 * Get the events that a user will participate in.
+	 *
+	 * @return array
+	 */
+	public function getEvents()
+	{
+		return $this->belongsToMany('Event');
+	}
+
 }
