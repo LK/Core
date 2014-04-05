@@ -8,7 +8,9 @@ Route::resource('session', 'SessionController');
 
 Route::resource('register', 'RegisterController');
 
-Route::resource('profile', 'ProfileController');
+Route::resource('profile', 'ProfileController', ['before' => 'auth']);
+
+Route::resource('event', 'EventController', ['before' => 'auth', 'except' => ['index']]);
 
 /*
 	Generic routes

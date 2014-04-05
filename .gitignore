@@ -1,26 +1,2 @@
-<<<<<<< HEAD
-/bootstrap/compiled.php
-/vendor
-composer.phar
-composer.lock
-.env.local.php
-.env.php
-.DS_Store
-Thumbs.dbvendor/
-=======
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-
-pids
-logs
-results
-
-npm-debug.log
-node_modules
->>>>>>> 19e34e157199503fcb9ef39a1b7ab74582166f1d
+vendor/
+public/components/
