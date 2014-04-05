@@ -5,36 +5,18 @@ class SessionController extends \BaseController {
 	protected $layout = 'layouts.default';
 
 	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		return View::make('session.index')->nest('footer', 'child.footer');
-	}
-
-	/**
-	 * Display register page
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show()
-	{
-
-	}
-
-	/**
-	 * Show the form for creating a new resource.
+	 * Show the login form
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
-		return View::make('session.create')->nest('footer', 'child.footer');
+		return View::make('session.create')->nest('footer', 'child.footer')->nest('navigation', 'child.header');
 	}
  
+ 	/**
+ 	 * Validate and create the user's session
+ 	 */
 	public function store()
 	{
 		$input = Input::all();
@@ -50,36 +32,13 @@ class SessionController extends \BaseController {
 	}
 
 	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
+	 * Log the user out
 	 */
-	public function edit($id)
+	public function destroy()
 	{
-		//
-	}
+		Auth::logout();
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+		return Redirect::home();
 	}
 
 }

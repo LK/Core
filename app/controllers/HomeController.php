@@ -14,7 +14,8 @@ class HomeController extends BaseController {
 		return View::make('generic.contact')->nest('navigation', 'child.header')->nest('footer', 'child.footer');
 	}
 
-	public function faq() {
+	public function faq()
+	{
 		return View::make('generic.faq')->nest('navigation', 'child.header')->nest('footer', 'child.footer');
 	}
 

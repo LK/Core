@@ -1,12 +1,14 @@
 <?php
 
-Route::get('/', 'HomeController@index');
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 Route::get('/login', 'SessionController@create');
 Route::get('/logoff', 'SessionController@destroy');
 Route::resource('session', 'SessionController');
 
 Route::resource('register', 'RegisterController');
+
+Route::resource('profile', 'ProfileController');
 
 /*
 	Generic routes

@@ -1,6 +1,6 @@
 <?php
 
-class RegisterController extends \BaseController {
+class ProfileController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class RegisterController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('register.index')->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		//
 	}
 
 	/**

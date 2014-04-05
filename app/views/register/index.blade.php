@@ -1,3 +1,5 @@
+@extends('layouts.default')
+
 @section('title')
 TeamHack | Register
 @stop
