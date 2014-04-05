@@ -1,17 +1,6 @@
 <?php
 
-class ProfileController extends \BaseController {
-
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		$user = User::find(Auth::user()->id);
-		return View::make('profile.index')->nest('navigation', 'child.header')->nest('footer', 'child.footer')->withUser($user);
-	}
+class EventController extends \BaseController {
 
 	/**
 	 * Show the form for creating a new resource.
@@ -41,8 +30,7 @@ class ProfileController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$user = User::find($id);
-		return View::make('profile.show')->withUser($user)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		//
 	}
 
 	/**
