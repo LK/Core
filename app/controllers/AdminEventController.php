@@ -2,14 +2,9 @@
 
 class AdminEventController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
-		//
+		return Redirect::to('admin');
 	}
 
 	/**
@@ -40,7 +35,10 @@ class AdminEventController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$event = Event::find($id);
+
+		if ($event) return View::make('admin.event.show')->withEvent($event)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		else return View::make('errors.404');
 	}
 
 	/**

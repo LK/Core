@@ -2,14 +2,9 @@
 
 class AdminUserController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
-		//
+		return Redirect::to('admin');
 	}
 
 	/**
@@ -40,7 +35,10 @@ class AdminUserController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$user = User::find($id);
+
+		if ($user) return View::make('admin.user.show')->withUser($user)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		else return View::make('errors.404')->nest('navigation', 'child.header')->nest('footer', 'child.footer');
 	}
 
 	/**
