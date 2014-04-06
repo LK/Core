@@ -14,26 +14,6 @@ class ProfileController extends \BaseController {
 	}
 
 	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
 	 * Display the specified resource.
 	 *
 	 * @param  int  $id
@@ -42,7 +22,11 @@ class ProfileController extends \BaseController {
 	public function show($id)
 	{
 		$user = User::find($id);
-		return View::make('profile.show')->withUser($user)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		
+		if ($user)
+			return View::make('profile.show')->withUser($user)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		else
+			return View::make('errors.404')->nest('navigation', 'child.header')->nest('footer', 'child.footer');
 	}
 
 	/**
