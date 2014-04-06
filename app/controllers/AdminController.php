@@ -9,9 +9,12 @@ class AdminController extends \BaseController {
 	 */
 	public function index()
 	{
-		$users = User::all()->take(20);
 
-		return View::make('admin.index')->withUsers($users)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		$users = DB::table('users')->max('id');
+		$events = DB::table('events')->max('id');
+
+		return View::make('admin.index')->withUsers($users)->withEvents($events)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+
 	}
 
 	/**

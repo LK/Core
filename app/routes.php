@@ -12,7 +12,7 @@ Route::resource('profile', 'ProfileController', ['before' => 'auth', 'except' =>
 
 Route::resource('event', 'EventController', ['before' => 'auth', 'except' => ['index']]);
 
-Route::resource('admin', 'AdminController');
+Route::resource('admin', 'AdminController', ['as' => 'admin']);
 
 Route::group(['prefix' => 'admin'], function()
 {
