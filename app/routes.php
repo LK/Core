@@ -8,9 +8,20 @@ Route::resource('session', 'SessionController');
 
 Route::resource('register', 'RegisterController');
 
-Route::resource('profile', 'ProfileController', ['before' => 'auth']);
+Route::resource('profile', 'ProfileController', ['before' => 'auth', 'except' => ['create', 'store']]);
 
 Route::resource('event', 'EventController', ['before' => 'auth', 'except' => ['index']]);
+
+Route::resource('admin', 'AdminController');
+
+Route::group(['prefix' => 'admin'], function()
+{
+
+	Route::resource('user', 'AdminUserController');
+
+	Route::resource('event', 'AdminEventController');
+
+});
 
 /*
 	Generic routes

@@ -1,6 +1,6 @@
 <?php
 
-class ProfileController extends \BaseController {
+class AdminController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,8 +9,29 @@ class ProfileController extends \BaseController {
 	 */
 	public function index()
 	{
-		$user = User::find(Auth::user()->id);
-		return View::make('profile.index')->nest('navigation', 'child.header')->nest('footer', 'child.footer')->withUser($user);
+		$users = User::all()->take(20);
+
+		return View::make('admin.index')->withUsers($users)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+	}
+
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		//
+	}
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store()
+	{
+		//
 	}
 
 	/**
@@ -21,12 +42,7 @@ class ProfileController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$user = User::find($id);
-		
-		if ($user)
-			return View::make('profile.show')->withUser($user)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
-		else
-			return View::make('errors.404')->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		//
 	}
 
 	/**
