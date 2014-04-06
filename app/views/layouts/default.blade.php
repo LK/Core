@@ -13,9 +13,9 @@
 		@if ($navigation != '')
 		{{ $navigation }}
 		@endif
-
-		@yield('content')
-		
+		<div class="container">
+			@yield('content')
+		</div>
 		{{ $footer }}
 
 		<script type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
