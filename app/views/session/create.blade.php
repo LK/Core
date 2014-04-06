@@ -4,19 +4,28 @@
 	TeamHack | Login
 @stop
 
-@section('content')
-{{ Form::open(['route' => 'session.store']) }}
+@section('css')
+<link rel="stylesheet" href="/css/session.css"/>
+@stop
 
-	<div>
-		{{ Form::label('email', 'Email: ') }}
-		{{ Form::text('email') }}
+@section('content')
+{{ Form::open(['route' => 'session.store', 'class' => 'sess_form']) }}
+	
+	<div class="upper header text-center">
+		<h3>Login</h3>
 	</div>
-	<div>
-		{{ Form::label('password', 'Password: ') }}
-		{{ Form::password('password') }}
+	<div class="inputs">
+		<div class="input">
+			{{ Form::label('email', 'Email: ') }}
+			{{ Form::text('email') }}
+		</div>
+		<div class="input">
+			{{ Form::label('password', 'Password: ') }}
+			{{ Form::password('password') }}
+		</div>
 	</div>
-	<div>
-		{{ Form::submit('Login') }}
+	<div class="lower text-center">
+		{{ Form::submit('Login', ['class' => 'btn btn-primary']) }}
 	</div>
 
 {{ Form::close() }}

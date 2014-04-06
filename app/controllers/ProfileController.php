@@ -20,7 +20,7 @@ class ProfileController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		
 	}
 
 	/**
