@@ -12,16 +12,16 @@ Route::resource('profile', 'ProfileController', ['before' => 'auth', 'except' =>
 
 Route::resource('event', 'EventController', ['before' => 'auth', 'except' => ['index']]);
 
-Route::resource('admin', 'AdminController', ['as' => 'admin']);
-
 Route::group(['prefix' => 'admin'], function()
 {
 
-	Route::resource('user', 'AdminUserController');
+	Route::get('users', 'AdminUserController@index');
 
-	Route::resource('event', 'AdminEventController');
+	Route::resource('events', 'AdminEventController');
 
 });
+
+Route::resource('admin', 'AdminController', ['as' => 'admin']);
 
 /*
 	Generic routes
