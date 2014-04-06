@@ -4,7 +4,9 @@ class AdminEventController extends \BaseController {
 
 	public function index()
 	{
-		return Redirect::to('admin');
+		$events = Hackathon::all();
+
+		return View::make('admin.event.index')->withEvents($events)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
 	}
 
 	/**
