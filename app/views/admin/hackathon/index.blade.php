@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-TeamHack | Events
+TeamHack | Hackathons
 @stop
 
 @section('css')
@@ -9,8 +9,8 @@ TeamHack | Events
 @stop
 
 @section('content')
-<h1>Users</h1>
-<table class="events table table-striped table-hover">
+<h1>Hackathons</h1>
+<table class="hackathons table table-striped table-hover">
 	<thead>
 		<tr>
 			<td>ID</td>
@@ -21,13 +21,13 @@ TeamHack | Events
 		</tr>
 	</thead>
 	<tbody>
-		@foreach($events as $event)
-		<tr href="events/{{ $event->id }}">
-			<td><p>{{ $event->id }}</p></td>
-			<td><p>{{ $event->name }}</p></td>
-			<td><p>{{ $event->begins }}</p></td>
-			<td><p>{{ $event->ends }}</p></td>
-			<td><p>{{ $event->owner }}</p></td>
+		@foreach($hackathons as $hackathon)
+		<tr href="hackathons/{{ $hackathon->id }}">
+			<td><p>{{ $hackathon->id }}</p></td>
+			<td><p>{{ $hackathon->name }}</p></td>
+			<td><p>{{ $hackathon->begins }}</p></td>
+			<td><p>{{ $hackathon->ends }}</p></td>
+			<td><p>{{ $hackathon->owner }}</p></td>
 		</tr>
 		@endforeach
 	</tbody>
@@ -37,7 +37,7 @@ TeamHack | Events
 @section('js')
 <script type="text/javascript">
 $(document).ready(function(){
-    $('table.events tr').click(function()
+    $('table.hackathons tr').click(function()
     {
         window.location = $(this).attr('href');
         return false;

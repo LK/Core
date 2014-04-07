@@ -17,7 +17,7 @@ Route::group(['prefix' => 'admin'], function()
 
 	Route::resource('users', 'AdminUserController');
 
-	Route::resource('events', 'AdminEventController');
+	Route::resource('hackathons', 'AdminHackathonController');
 
 });
 
