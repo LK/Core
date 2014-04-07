@@ -7,7 +7,7 @@ class Hackathon extends \Eloquent {
 
 	public function owner()
 	{
-		return $this->hasOne('User');
+		return $this->belongsTo('User');
 	}
 
 	public function participants()
