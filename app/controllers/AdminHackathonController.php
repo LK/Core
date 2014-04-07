@@ -1,10 +1,12 @@
 <?php
 
-class AdminEventController extends \BaseController {
+class AdminHackathonController extends \BaseController {
 
 	public function index()
 	{
-		return Redirect::to('admin');
+		$hackathons = Hackathon::all();
+
+		return View::make('admin.hackathon.index')->withHackathons($hackathons)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
 	}
 
 	/**

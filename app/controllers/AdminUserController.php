@@ -4,7 +4,9 @@ class AdminUserController extends \BaseController {
 
 	public function index()
 	{
-		return Redirect::to('admin');
+		$users = User::all();
+
+		return View::make('admin.user.index')->withUsers($users)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
 	}
 
 	/**

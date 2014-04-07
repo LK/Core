@@ -20,7 +20,7 @@ TeamHack | Users
 	</thead>
 	<tbody>
 		@foreach($users as $user)
-		<tr href="admin/user/{{ $user->id }}">
+		<tr href="users/{{ $user->id }}">
 			<td><p>{{ $user->id }}</p></td>
 			<td><p>{{ $user->name }}</p></td>
 			<td><p>{{ $user->email }}</p></td>
