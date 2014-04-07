@@ -7,11 +7,11 @@ class Hackathon extends \Eloquent {
 
 	public function owner()
 	{
-		return $this->belongsTo('User');
+		return $this->belongsTo('User', 'owner');
 	}
 
 	public function participants()
 	{
-		return $this->belongsToMany('User');
+		return $this->hasManyThrough('User', 'HackathonParticipant', 'event_id', 'id', 'user_id');
 	}
 }
