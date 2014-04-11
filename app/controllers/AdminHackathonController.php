@@ -37,9 +37,9 @@ class AdminHackathonController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$event = Event::find($id);
+		$hackathon = Hackathon::find($id);
 
-		if ($event) return View::make('admin.event.show')->withEvent($event)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		if ($hackathon) return View::make('admin.hackathon.show')->withHackathon($hackathon)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
 		else return View::make('errors.404');
 	}
 
