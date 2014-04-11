@@ -17,9 +17,10 @@ class EventsTableSeeder extends Seeder {
 
 			Hackathon::create([
 				'name' => $faker->word,
+				'description' => $faker->text,
+				'image' => 'images/'.$faker->word,
 				'begins' => Carbon::instance($start)->toDateTimeString(),
 				'ends' => Carbon::instance($end)->toDateTimeString(),
-				'description' => $faker->text,
 				'owner' => User::orderBy(DB::raw('RAND()'))->first()->id
 			]);
 		}

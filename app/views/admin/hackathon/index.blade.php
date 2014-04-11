@@ -27,7 +27,7 @@ TeamHack | Hackathons
 			<td><p>{{ $hackathon->name }}</p></td>
 			<td><p>{{ $hackathon->begins }}</p></td>
 			<td><p>{{ $hackathon->ends }}</p></td>
-			<td><p>{{ $hackathon->owner }}</p></td>
+			<td><p>{{ $hackathon->participants()->firstOrFail()->name }}</p></td>
 		</tr>
 		@endforeach
 	</tbody>
