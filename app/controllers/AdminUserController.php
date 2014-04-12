@@ -6,7 +6,7 @@ class AdminUserController extends \BaseController {
 	{
 		$users = User::all();
 
-		return View::make('admin.user.index')->withUsers($users)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		return View::make('admin.user.index')->withUsers($users)->nest('navigation', 'child.header_admin')->nest('footer', 'child.footer');
 	}
 
 	/**
@@ -39,8 +39,8 @@ class AdminUserController extends \BaseController {
 	{
 		$user = User::find($id);
 
-		if ($user) return View::make('admin.user.show')->withUser($user)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
-		else return View::make('errors.404')->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		if ($user) return View::make('admin.user.show')->withUser($user)->nest('navigation', 'child.header_admin')->nest('footer', 'child.footer');
+		else return View::make('errors.404')->nest('navigation', 'child.header_admin')->nest('footer', 'child.footer');
 	}
 
 	/**

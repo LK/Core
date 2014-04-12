@@ -6,7 +6,7 @@ class AdminHackathonController extends \BaseController {
 	{
 		$hackathons = Hackathon::all();
 
-		return View::make('admin.hackathon.index')->withHackathons($hackathons)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		return View::make('admin.hackathon.index')->withHackathons($hackathons)->nest('navigation', 'child.header_admin')->nest('footer', 'child.footer');
 	}
 
 	/**
@@ -39,7 +39,7 @@ class AdminHackathonController extends \BaseController {
 	{
 		$hackathon = Hackathon::find($id);
 
-		if ($hackathon) return View::make('admin.hackathon.show')->withHackathon($hackathon)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		if ($hackathon) return View::make('admin.hackathon.show')->withHackathon($hackathon)->nest('navigation', 'child.header_admin')->nest('footer', 'child.footer');
 		else return View::make('errors.404');
 	}
 

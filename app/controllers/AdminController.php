@@ -13,7 +13,7 @@ class AdminController extends \BaseController {
 		$users = DB::table('users')->max('id');
 		$events = DB::table('events')->max('id');
 
-		return View::make('admin.index')->withUsers($users)->withEvents($events)->nest('navigation', 'child.header')->nest('footer', 'child.footer');
+		return View::make('admin.index')->withUsers($users)->withEvents($events)->nest('navigation', 'child.header_admin')->nest('footer', 'child.footer');
 
 	}
 

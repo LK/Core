@@ -34,7 +34,7 @@ TeamHack | {{ $user->name }}
 		<h3>{{ $user->name }} <small>{{ $user->id }}</small></h3>
 	</div>
 	<div class="panel panel-default">
-		<div class="panel-heading">Hackathons</div>
+		<div class="panel-heading">Hackathons Attended</div>
 		<div class="panel-body">
 			<table class="hackathons table table-striped table-hover">
 				<thead>
