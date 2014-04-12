@@ -13,5 +13,5 @@ TeamHack | Admin
 <br/>
 <h3>Stats</h3>
 <p>Users: {{$users}}</p>
-<p>Events: {{$events}}</p>
+<p>Hackathons: {{$events}}</p>
 @stop
