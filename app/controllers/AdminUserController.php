@@ -4,7 +4,7 @@ class AdminUserController extends \BaseController {
 
 	public function index()
 	{
-		$users = User::all();
+		$users = User::all()->take(50);
 
 		return View::make('admin.user.index')->withUsers($users)->nest('navigation', 'child.header_admin')->nest('footer', 'child.footer');
 	}
