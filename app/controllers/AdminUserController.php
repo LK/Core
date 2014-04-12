@@ -73,7 +73,10 @@ class AdminUserController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$user = User::find($id);
+		$user->delete();
+
+		return Redirect::route('admin.users.index');
 	}
 
 }

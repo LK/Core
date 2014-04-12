@@ -12,6 +12,6 @@ TeamHack | Admin
 <h1>Admin Page</h1>
 <br/>
 <h3>Stats</h3>
-<p>Users: {{$users}}</p>
-<p>Events: {{$events}}</p>
+<p>{{ link_to_route('admin.users.index', 'Users') }}: {{$users}}</p>
+<p>{{ link_to_route('admin.hackathons.index', 'Hackathons') }}: {{$events}}</p>
 @stop
