@@ -4,7 +4,7 @@ class AdminUserController extends \BaseController {
 
 	public function index()
 	{
-		$users = User::paginate(5);
+		$users = User::paginate(25);
 
 		return View::make('admin.user.index')->withUsers($users)->nest('navigation', 'child.header_admin')->nest('footer', 'child.footer');
 	}
