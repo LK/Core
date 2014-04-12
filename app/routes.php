@@ -16,7 +16,7 @@ Route::resource('event', 'EventController', ['before' => 'auth', 'except' => ['i
 Route::group(['prefix' => 'admin'], function()
 {
 
-	Route::resource('users', 'AdminUserController');
+	Route::resource('users', 'AdminUserController', array('except' => array('create', 'store'));
 
 	Route::resource('hackathons', 'AdminHackathonController');
 
