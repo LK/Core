@@ -28,6 +28,7 @@ TeamHack | Users
 		@endforeach
 	</tbody>
 </table>
+{{ $users->links() }}
 @stop
 
 @section('js')
